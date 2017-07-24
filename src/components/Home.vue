@@ -1,8 +1,5 @@
 <template>
-  <div class="main" style="overflow: hidden">  
-        <h1>Home Page</h1>
-        <hr>        
-        <listaLibros></listaLibros>  
+  <div class="main" style="overflow: hidden">          
   </div>
 </template>
 
@@ -10,9 +7,7 @@
 import PublicBooks from './PublicBooks.vue'
 export default {  
   name: 'Home',
-  components:{
-    'listaLibros': PublicBooks
-  },
+ 
   data: function () {
     return {
       counter: 0
