@@ -1,11 +1,18 @@
 <template>
   <div class="main" style="overflow: hidden">  
-      <h1>Libros públicos</h1>
-      <ul v-if="libros && libros.length">
-        <div class="columns is-mobile">
-          <div class="column is-half-desktop is-half-mobile is-offset-3-mobile">
+  
+      <div class="columns">
+      <div class="column is-half-desktop is-8-mobile is-half-tablet is-offset-2-mobile is-offset-3-tablet is-primary">
+        <div class="box" style="background-color: #276CDA"><h1 class="title has-text-white-bis has-text-centered">Libros públicos</h1></div>
+      </div>         
+      </div>
+      <div class="columns">
+        <div class="column is-half-desktop is-8-mobile is-half-tablet is-offset-2-mobile is-offset-3-tablet borde">
+         <ul v-if="libros && libros.length">
           <li v-for="libro of libros">
-            <div class="card">
+            
+          <a>{{libro.titulo}}</a>          
+            <!-- <div class="card">
               <header class="card-header">
                 <p class="card-header-title">
                   {{libro.titulo}}
@@ -16,9 +23,9 @@
                   </span>
                 </a>
               </header>
-              <div class="card-content">
+              <div class="card-content">              
                 <div class="content">
-                  <p style="white-space: nowrap;">{{libro.descripcion}}</p>
+                 <p class="wrap-text">{{libro.descripcion}}</p>                 
                   <small>Subido: {{libro.created_at}}</small>
                 </div>
               </div>
@@ -27,13 +34,11 @@
                 <a class="card-footer-item">Edit</a>
                 <a class="card-footer-item">Delete</a>
               </footer>
-            </div>
-          </li>
-         
-          </div>
-        </div>            
-      </ul>
-      
+            </div> -->
+          </li>   
+        </ul>         
+      </div>                      
+    </div>
   </div>
 </template>
 
@@ -69,8 +74,26 @@ export default {
 }
 </script>
 <style>
+  .main{
+    margin-top: 20px;
+  }
+  .card{
+    margin-top: 20px;
+  }
   .centrada {
     display: block;
     margin-left: auto;
     margin-right: auto }
+
+    .wrap-text{      
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+    overflow: hidden
+    }
+    .borde{
+      border-color: gray;
+      border-style: double;    
+    }
 </style>
